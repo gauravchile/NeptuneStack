@@ -1,6 +1,7 @@
 # 🌊 Neptune Stack — Cloud-Native Microservices on Kubernetes
 
 <p align="center">
+<<<<<<< HEAD
   <img src="https://img.shields.io/badge/Kubernetes-Production--Ready-blue?style=for-the-badge" />
   <img src="https://img.shields.io/badge/DevOps-Workflow-orange?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Docker-Containerized-green?style=for-the-badge" />
@@ -24,6 +25,8 @@
 ## 🏷️ Technology Badges
 
 <p align="center">
+=======
+>>>>>>> 5e26854598d1cf6a8c1733571bf7e56964cb61e5
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
   <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
   <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" />
@@ -33,6 +36,16 @@
   <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" />
   <img src="https://img.shields.io/badge/Makefile-A42E2B?style=for-the-badge" />
 </p>
+
+---
+
+## 📸 Screenshots
+
+> **Home Page:**
+>
+> ![Home Screenshot](Neptune Stack.PNG)
+
+
 
 ---
 
