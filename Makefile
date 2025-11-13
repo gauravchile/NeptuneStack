@@ -26,12 +26,25 @@ push:
 
 ##  Installing kubectl
 kind:
+	@echo "Removing old Kubernetes repo..."
 	sudo rm -f /etc/apt/sources.list.d/kubernetes.list
 	sudo rm -f /usr/share/keyrings/kubernetes-archive-keyring.gpg
-	curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /usr/share/keyrings/kubernetes-archive-keyring.gpg
-	echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+	@echo "Adding Kubernetes GPG key..."
+	curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | \
+		sudo gpg --dearmor -o /usr/share/keyrings/kubernetes-archive-keyring.gpg
+
+	@echo "Adding Kubernetes APT source..."
+	echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /" | \
+		sudo tee /etc/apt/sources.list.d/kubernetes.list > /dev/null
+
+	@echo "Updating package index..."
 	sudo apt update
+
+	@echo "Installing kubectl..."
 	sudo apt install -y kubectl
+
+	@echo "kubectl installation complete!"
 
 ##  Create Cluster
 create:
