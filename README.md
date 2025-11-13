@@ -206,10 +206,10 @@ sudo ./infra/scripts/uninstall-port-forward.sh
 ### Option B — Manual Port-Forward
 
 ```bash
-kubectl -n neptune port-forward svc/neptune-web 8080:80
+kubectl -n neptune port-forward svc/neptune-web 80:80
 ```
 
-→ [http://localhost:8080](http://localhost:8080)
+→ [http://localhost:80](http://localhost:80)
 
 ---
 
