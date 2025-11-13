@@ -54,29 +54,32 @@ Includes:
 
 ## 🧩 Architecture Diagram
 
-```mermaid
 graph TB
+
+    %% User section
     subgraph User
         U[User Browser]
     end
 
-    subgraph Internet
+    %% Internet section
+    subgraph "Internet"
         IN[Internet Traffic]
     end
 
-    subgraph Kubernetes Cluster
-        A[Ingress Controller (Nginx)]
-        B[Frontend Pod (React + NGINX)]
-        C[Backend Pod (Node.js API)]
-        D[(PostgreSQL StatefulSet)]
-
+    %% Kubernetes Cluster section
+    subgraph "Kubernetes Cluster"
+        A["Ingress Controller (Nginx)"]
+        B["Frontend Pod (React + NGINX)"]
+        C["Backend Pod (Node.js API)"]
+        D["PostgreSQL StatefulSet"]
+        
         A --> B
         B --> C
         C --> D
     end
 
     U --> IN --> A
-```
+
 
 ---
 
