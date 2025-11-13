@@ -26,9 +26,12 @@ push:
 
 ##  Installing kubectl
 kind:
-	curl -Lo kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64
-	chmod +x kind
-	sudo mv kind /usr/local/bin
+	sudo rm -f /etc/apt/sources.list.d/kubernetes.list
+	sudo rm -f /usr/share/keyrings/kubernetes-archive-keyring.gpg
+	curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /usr/share/keyrings/kubernetes-archive-keyring.gpg
+	echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+	sudo apt update
+	sudo apt install -y kubectl
 
 ##  Create Cluster
 create:
