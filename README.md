@@ -229,20 +229,6 @@ kubectl -n neptune port-forward svc/neptune-web 8080:80
 * Liveness & Readiness probes
 * Stateful database with PVC
 * Auto-restart and self-healing deployments
-
----
-
-## 💼 Recruiter Highlights
-
-Demonstrates expertise in:
-
-* Kubernetes production architecture
-* Infrastructure-as-Code (Kustomize)
-* Secure, scalable microservices
-* Real DevOps workflows
-* CI/CD readiness
-
-Ideal roles: **DevOps Engineer • Kubernetes Engineer • Cloud Engineer • SRE**
-
+  
 ---
 
