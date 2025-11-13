@@ -1,10 +1,14 @@
 # 🌊 Neptune Stack — Cloud-Native Microservices on Kubernetes
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Kubernetes-Production--Ready-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/DevOps-Workflow-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Docker-Containerized-green?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Database-PostgreSQL-lightblue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
+  <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" />
+  <img src="https://img.shields.io/badge/Makefile-A42E2B?style=for-the-badge" />
 </p>
 
 ---
@@ -15,20 +19,7 @@
 >
 > ![Home Screenshot](Neptune Stack.PNG)
 
----
 
-## 🏷️ Technology Badges
-
-<p align="center">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
-  <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
-  <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" />
-  <img src="https://img.shields.io/badge/Makefile-A42E2B?style=for-the-badge" />
-</p>
 
 ---
 
