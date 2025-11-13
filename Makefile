@@ -1,7 +1,7 @@
 # Neptune Stack - Kubernetes Project
 # Build, Push, and Deploy Automation for Local + Remote Clusters
 
-REG ?= <docker-username>
+REG ?= gauravchile
 APP_API = $(REG)/neptune-api
 APP_WEB = $(REG)/neptune-web
 
@@ -29,6 +29,7 @@ kind:
 	curl -Lo kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64
 	chmod +x kind
 	sudo mv kind /usr/local/bin/
+	sudo snap install kubectl --classic
 
 ##  Create Cluster
 create:
