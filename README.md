@@ -13,8 +13,12 @@
 
 > **Home Page:**
 >
-> ![Home Screenshot](Neptune Stack.PNG)
-
+> ![Home Screenshot](Screenshots/Neptune Stack.PNG)
+>
+> **Architecture Diagram:**
+>
+> ![Architecture Screenshot](Screenshots/Architecture.PNG)
+>
 ---
 
 ## 🏷️ Technology Badges
@@ -52,37 +56,6 @@ Includes:
 
 ---
 
-## 🧩 Architecture Diagram
-
-graph TB
-
-    %% User section
-    subgraph User
-        U[User Browser]
-    end
-
-    %% Internet section
-    subgraph "Internet"
-        IN[Internet Traffic]
-    end
-
-    %% Kubernetes Cluster section
-    subgraph "Kubernetes Cluster"
-        A["Ingress Controller (Nginx)"]
-        B["Frontend Pod (React + NGINX)"]
-        C["Backend Pod (Node.js API)"]
-        D["PostgreSQL StatefulSet"]
-        
-        A --> B
-        B --> C
-        C --> D
-    end
-
-    U --> IN --> A
-
-
----
-
 ## ⚙️ Technology Stack
 
 | Layer        | Technology               | Purpose                            |
@@ -91,7 +64,6 @@ graph TB
 | **Backend**  | Node.js (Express)        | API & business logic               |
 | **Database** | PostgreSQL + PVC         | Persistent reliable storage        |
 | **Platform** | Kubernetes               | Orchestration, networking, scaling |
-| **CI/CD**    | GitHub Actions / Jenkins | Automation-ready pipeline          |
 
 ---
 
