@@ -1,0 +1,21 @@
+[Unit]
+Description=Neptune Web Kubernetes Port-Forward (Public) for user %i
+After=network-online.target
+
+[Service]
+User=%i
+Environment=USER=%i
+Environment=KUBECONFIG=/home/%i/.kube/config
+
+# Public port-forward on 0.0.0.0:80 → neptune-web:80
+ExecStart=/usr/local/bin/kubectl -n neptune port-forward svc/neptune-web 80:80 --address=0.0.0.0
+
+Restart=always
+RestartSec=5
+
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target
+

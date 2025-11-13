@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: neptune-api
+  namespace: neptune
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: neptune-api
+  template:
+    metadata:
+      labels:
+        app: neptune-api
+    spec:
+      serviceAccountName: neptune-sa
+      containers:
+        - name: api
+          image: gauravchile/neptune-api
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: neptune-config
+            - secretRef:
+                name: neptune-secrets
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
+

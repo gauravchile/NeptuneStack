@@ -1,0 +1,28 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+images:
+  - name: gauravchile/neptune-api
+    newTag: latest
+  - name: gauravchile/neptune-web
+    newTag: latest
+
+patches:
+  - target:
+      kind: Deployment
+      name: neptune-api
+    patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 2
+  - target:
+      kind: Deployment
+      name: neptune-web
+    patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 2
+

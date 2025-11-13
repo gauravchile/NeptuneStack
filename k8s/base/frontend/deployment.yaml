@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: neptune-web
+  namespace: neptune
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: neptune-web
+  template:
+    metadata:
+      labels:
+        app: neptune-web
+    spec:
+      containers:
+        - name: web
+          image: gauravchile/neptune-web
+          ports:
+            - containerPort: 80   # <---- FIXED
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80            # <---- FIXED
+            initialDelaySeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80            # <---- FIXED
+            initialDelaySeconds: 15
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 300m
+              memory: 128Mi
+

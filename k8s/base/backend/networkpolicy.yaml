@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: api-allow-frontend
+  namespace: neptune
+spec:
+  podSelector:
+    matchLabels:
+      app: neptune-api
+  policyTypes: ["Ingress"]
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: neptune-web
+      ports:
+        - protocol: TCP
+          port: 8080
+

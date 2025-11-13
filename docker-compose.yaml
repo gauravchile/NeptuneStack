@@ -1,0 +1,44 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: neptune-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: neptunedb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    image: gauravchile/neptune-api:latest
+    container_name: neptune-api
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      DB_HOST: postgres
+      DB_PORT: "5432"
+      DB_USER: admin
+      DB_PASSWORD: admin123
+      DB_NAME: neptunedb
+      PORT: "8080"
+    ports:
+      - "8080:8080"
+
+  web:
+    image: gauravchile/neptune-web:latest
+    container_name: neptune-web
+    restart: always
+    depends_on:
+      - api
+    ports:
+      - "3000:80"
+    environment:
+      API_URL: "http://localhost:8080"
+
+volumes:
+  pgdata:
+

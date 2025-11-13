@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: neptune-api
+  namespace: neptune
+spec:
+  selector:
+    app: neptune-api
+  ports:
+    - port: 8080
+      targetPort: 8080
+
